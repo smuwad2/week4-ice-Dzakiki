@@ -22,8 +22,32 @@
                 // Invalid age: Age must be between 10 and 40.
                 // Invalid email: Email must contain the character @.
                 // Empty password: Password must be non-empty.
+                var frm = document.forms["inputForm"];
+                var id = frm["id"].value;
+                var age = frm["age"].value;
+                var email = frm["email"].value;
+                var pass = frm["password"].value;
                 var errorMessages="";
                 
+                if (id.length > 10) {
+                    errorMessages += "ID must be lesser than 10 characters.\n"
+                }
+                if (age < 10 || age > 40) {
+                    errorMessages += "Invalid age: Age must be between 10 and 40.\n";
+                }
+                if (!email.includes("@")) {
+                    errorMessages += "Invalid email: Email must contain the character @.\n";
+                }
+                if (pass.length === 0) {
+                    errorMessages += "Empty password: Password must be non-empty.\n";
+                }
+
+                if (errorMessages.length > 0) {
+                    alert(errorMessages);
+                    return false; // stop form submission
+                }
+
+                return true; // allow form submission
                 
             }
      
