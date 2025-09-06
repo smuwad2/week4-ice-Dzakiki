@@ -19,6 +19,19 @@
     <script>
         
         // add code here
+        var slist = document.getElementById("select_item");
+        var scart = document.getElementById("shopList");
+
+        
+        slist.addEventListener("change", () => {
+        var item = document.createElement("li");
+        var itemToAdd = document.createTextNode(slist.value)
+        item.appendChild(itemToAdd)
+        scart.appendChild(item)
+            }
+        )
+
+
         
         
     </script>
