@@ -11,19 +11,37 @@
 
    <input type="text" id="inputText">
    <!-- add a button here for adding new item -->
+    <button onclick="addToList()">Enter</button>
 
    <ul>
-      <li>Notebook<!--<button>Delete</button></li>-->
-      <li>Jello</li>
-      <li>Spinach</li>
-      <li>Rice</li>
-      <li>Birthday Cake</li>
-      <li>Candles</li>
+      <li>Notebook<button onclick="remove(this.parentNode)">Delete</button></li>
+      <li>Jello<button onclick="remove(this.parentNode)">Delete</button></li>
+      <li>Spinach<button onclick="remove(this.parentNode)">Delete</button></li>
+      <li>Rice<button onclick="remove(this.parentNode)">Delete</button></li>
+      <li>Birthday Cake<button onclick="remove(this.parentNode)">Delete</button></li>
+      <li>Candles<button onclick="remove(this.parentNode)">Delete</button></li>
    </ul>
 
    <script>
 
       // add code here
+      function addToList() {
+         var item = document.getElementById("inputText").value;
+         
+         var input = document.createElement("li");
+         var del = document.createElement("button");
+         del.textContent = "Delete"
+         input.appendChild(document.createTextNode(item));
+         del.addEventListener('click', function() { remove(this.parentNode) })
+         input.appendChild(del);
+
+         var list = document.getElementsByTagName("ul")[0];
+         list.appendChild(input);
+      }
+
+      function remove(obj) {
+         obj.remove();
+      }
 
    </script>
 

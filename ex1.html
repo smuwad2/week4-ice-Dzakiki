@@ -33,13 +33,13 @@
                     errorMessages += "ID must be lesser than 10 characters.\n"
                 }
                 if (age < 10 || age > 40) {
-                    errorMessages += "Invalid age: Age must be between 10 and 40.\n";
+                    errorMessages += "Age must be between 10 and 40.\n";
                 }
                 if (!email.includes("@")) {
-                    errorMessages += "Invalid email: Email must contain the character @.\n";
+                    errorMessages += "Email must contain the character @.\n";
                 }
                 if (pass.length === 0) {
-                    errorMessages += "Empty password: Password must be non-empty.\n";
+                    errorMessages += "Password must be non-empty.\n";
                 }
 
                 if (errorMessages.length > 0) {
