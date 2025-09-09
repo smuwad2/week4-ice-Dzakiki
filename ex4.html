@@ -43,6 +43,14 @@
          obj.remove();
       }
 
+      var item = document.getElementById("inputText");
+      item.addEventListener("keydown", function() {
+         if (event.key === "Enter") {
+            addToList();
+         }
+      })
+
+
    </script>
 
 </body>

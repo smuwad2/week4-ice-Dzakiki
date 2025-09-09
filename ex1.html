@@ -22,11 +22,11 @@
                 // Invalid age: Age must be between 10 and 40.
                 // Invalid email: Email must contain the character @.
                 // Empty password: Password must be non-empty.
-                var frm = document.forms["inputForm"];
-                var id = frm["id"].value;
-                var age = frm["age"].value;
-                var email = frm["email"].value;
-                var pass = frm["password"].value;
+                let frm = document.forms["inputForm"];
+                let id = frm["id"].value;
+                let age = frm["age"].value;
+                let email = frm["email"].value;
+                let pass = frm["password"].value;
                 var errorMessages="";
                 
                 if (id.length > 10) {
