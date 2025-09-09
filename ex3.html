@@ -1,0 +1,53 @@
+<html>
+
+<head>
+   <title>Event Handling</title>
+</head>
+
+<body>
+
+   <h1>Shopping List</h1>
+   <p>Get it done today</p>
+
+   <input type="text" id="inputText">
+   <!-- add a button here for adding new item -->
+    <button onclick="addToList()">Enter</button>
+
+   <ul>
+      <li>Notebook <!--<button onclick="remove(this.parentNode)">Delete</button> --> </li>
+      <li>Jello</li>
+      <li>Spinach</li>
+      <li>Rice</li>
+      <li>Birthday Cake</li>
+      <li>Candles</li>
+   </ul>
+
+   <script>
+
+      // add code here
+      function addToList() {
+         var item = document.getElementById("inputText").value;
+         
+         var input = document.createElement("li");
+         //input.appendChild(document.createTextNode(item));
+         //or you can simply use innerText
+         input.innerText = item;
+        
+         //selecting by tagname or classname will return you an array because there may be lots of tags / class, so rmb to select the index from the array.
+         var list = document.getElementsByTagName("ul")[0];
+         list.appendChild(input);
+      }
+
+      var item = document.getElementById("inputText");
+      item.addEventListener("keydown", function() {
+         if (event.key === "Enter") {
+            addToList();
+         }
+      })
+
+
+   </script>
+
+</body>
+
+</html>
